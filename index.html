@@ -7,7 +7,27 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/index.css">  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      $('#dark_light_btn span').click(function(){
+        var btnTxt=$(this).text();
+        if(btnTxt=="Dark Mode"){
+          dark_mode();
+        }else{
+          light_mode();
+        }
+      });
 
+      function dark_mode(){
+        $('a,h1,h2,p,header,#html,#js,#banner,#css,footer').addClass('dark');
+        $('#dark_light_btn span').text("Light Mode");
+      }
+      function light_mode(){
+        $('a,h1,h2,p,header,#html,#js,#banner,#css,footer').removeClass('dark');
+        $('#dark_light_btn span').text("Dark Mode");
+      }
+    })
+  </script>
 </head>
 <body>
   <div id="dark_light_btn">
